@@ -81,3 +81,63 @@ export type OrderItem = Prisma.OrderItemModel
  * 
  */
 export type Invitation = Prisma.InvitationModel
+/**
+ * Model Site
+ * 
+ */
+export type Site = Prisma.SiteModel
+/**
+ * Model Project
+ * 
+ */
+export type Project = Prisma.ProjectModel
+/**
+ * Model InventoryItem
+ * 
+ */
+export type InventoryItem = Prisma.InventoryItemModel
+/**
+ * Model EquipmentAsset
+ * 
+ */
+export type EquipmentAsset = Prisma.EquipmentAssetModel
+/**
+ * Model Checkout
+ * 
+ */
+export type Checkout = Prisma.CheckoutModel
+/**
+ * Model CheckoutItem
+ * 
+ */
+export type CheckoutItem = Prisma.CheckoutItemModel
+/**
+ * Model ProjectAllocation
+ * 
+ */
+export type ProjectAllocation = Prisma.ProjectAllocationModel
+/**
+ * Model StockMovement
+ * 
+ */
+export type StockMovement = Prisma.StockMovementModel
+/**
+ * Model FieldVisit
+ * 
+ */
+export type FieldVisit = Prisma.FieldVisitModel
+/**
+ * Model FieldPhoto
+ * 
+ */
+export type FieldPhoto = Prisma.FieldPhotoModel
+/**
+ * Model FieldReport
+ * 
+ */
+export type FieldReport = Prisma.FieldReportModel
+/**
+ * Model SupportTicket
+ * 
+ */
+export type SupportTicket = Prisma.SupportTicketModel

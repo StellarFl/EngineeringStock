@@ -5,9 +5,9 @@ const options: swaggerJSDoc.Options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Inventree API',
+      title: 'ForgeTrack API',
       version,
-      description: 'API documentation for the Inventree E-commerce and Inventory Management System.',
+      description: 'API documentation for the ForgeTrack engineering inventory and field reporting system.',
     },
     // Swagger UI renders tag groups in this order, so declaring them here
     // controls the sidebar order regardless of which file each path lives in.

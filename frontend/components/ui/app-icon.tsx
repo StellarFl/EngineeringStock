@@ -33,6 +33,7 @@ export const icons = {
   users: "lucide:users",
   settings: "lucide:settings",
   support: "lucide:life-buoy",
+  chat: "lucide:message-circle",
   search: "lucide:search",
   bell: "lucide:bell",
   history: "lucide:history",

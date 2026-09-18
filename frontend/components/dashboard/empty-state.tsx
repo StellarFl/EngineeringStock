@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Route } from "next";
 
 import type { NavItem } from "@/components/dashboard/nav-config";
 import { AppIcon, icons, type IconName } from "@/components/ui/app-icon";
@@ -42,7 +43,7 @@ export function EmptyState({
 
       {action && (
         <Link
-          href={action.href}
+          href={action.href as Route}
           className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-ink-200 px-3 py-1.5 text-xs font-semibold text-ink-700 transition-colors duration-200 ease-out-soft hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700"
         >
           {action.label}

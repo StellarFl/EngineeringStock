@@ -26,6 +26,56 @@ enum InvitationStatus {
   declined
 }
 
+enum InventoryCategory {
+  consumable
+  tool
+  equipment
+}
+
+enum ProjectStatus {
+  planned
+  active
+  on_hold
+  completed
+  cancelled
+}
+
+enum CheckoutStatus {
+  open
+  partially_returned
+  returned
+  overdue
+}
+
+enum ItemCondition {
+  new
+  good
+  needs_repair
+  retired
+}
+
+enum StockMovementType {
+  receipt
+  adjustment
+  consumption
+  return
+  loss
+  damage
+}
+
+enum FieldVisitStatus {
+  planned
+  in_progress
+  completed
+  cancelled
+}
+
+enum FieldReportStatus {
+  draft
+  generated
+  finalised
+}
+
 model User {
   id                 String              @id @default(uuid())
   name               String
@@ -37,6 +87,13 @@ model User {
   memberships        Membership[]
   invitations        Invitation[] 
   passwordResetToken PasswordResetToken?
+  projectsCreated   Project[]           @relation("ProjectCreatedBy")
+  checkoutsBorrowed Checkout[]           @relation("CheckoutBorrower")
+  checkoutsCreated  Checkout[]           @relation("CheckoutCreatedBy")
+  stockMovements    StockMovement[]      @relation("StockMovementPerformedBy")
+  fieldVisits       FieldVisit[]         @relation("FieldVisitEngineer")
+  fieldReports      FieldReport[]        @relation("FieldReportGeneratedBy")
+  supportTickets    SupportTicket[]      @relation("SupportTicketCreatedBy")
   deletedAt          DateTime?
   createdAt          DateTime            @default(now())
   updatedAt          DateTime            @default(now()) @updatedAt
@@ -59,6 +116,13 @@ model Business {
   invitations Invitation[]
   products    Product[]
   orders      Order[]
+  sites       Site[]
+  projects    Project[]
+  inventoryItems InventoryItem[]
+  checkouts   Checkout[]
+  stockMovements StockMovement[]
+  fieldVisits FieldVisit[]
+  supportTickets SupportTicket[]
   createdAt   DateTime     @default(now())
   updatedAt   DateTime     @default(now()) @updatedAt
 
@@ -136,4 +200,253 @@ model Invitation {
 
   @@unique([email, businessId, status])
   @@index([businessId])
+}
+
+model Site {
+  id          String       @id @default(uuid())
+  name        String
+  code        String?
+  address     String?
+  latitude    Decimal?     @db.Decimal(10, 7)
+  longitude   Decimal?     @db.Decimal(10, 7)
+  businessId  String
+  business    Business     @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  projects    Project[]
+  inventoryItems InventoryItem[]
+  fieldVisits FieldVisit[]
+  photos      FieldPhoto[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now()) @updatedAt
+
+  @@unique([businessId, name])
+  @@unique([businessId, code])
+  @@index([businessId])
+}
+
+model Project {
+  id          String        @id @default(uuid())
+  name        String
+  code        String?
+  description String?
+  customerName String?
+  status      ProjectStatus @default(planned)
+  startDate   DateTime?
+  endDate     DateTime?
+  businessId  String
+  business    Business      @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  siteId      String?
+  site        Site?         @relation(fields: [siteId], references: [id], onDelete: SetNull)
+  createdById String?
+  createdBy   User?         @relation("ProjectCreatedBy", fields: [createdById], references: [id], onDelete: SetNull)
+  allocations ProjectAllocation[]
+  checkouts   Checkout[]
+  stockMovements StockMovement[]
+  fieldVisits FieldVisit[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now()) @updatedAt
+
+  @@unique([businessId, name])
+  @@unique([businessId, code])
+  @@index([businessId, status])
+}
+
+model InventoryItem {
+  id                  String           @id @default(uuid())
+  name                String
+  description         String?
+  specification       String
+  sku                 String?
+  category            InventoryCategory
+  quantityOnHand      Int              @default(0)
+  reorderPoint        Int              @default(0)
+  referenceDocumentUrl String?
+  supplierName        String?
+  supplierEmail       String?
+  businessId          String
+  business            Business         @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  siteId              String?
+  site                Site?            @relation(fields: [siteId], references: [id], onDelete: SetNull)
+  equipmentAsset      EquipmentAsset?
+  checkoutItems       CheckoutItem[]
+  allocations         ProjectAllocation[]
+  stockMovements      StockMovement[]
+  createdAt            DateTime         @default(now())
+  updatedAt            DateTime         @default(now()) @updatedAt
+
+  @@unique([businessId, name])
+  @@unique([businessId, sku])
+  @@index([businessId, category])
+  @@index([businessId, quantityOnHand])
+}
+
+model EquipmentAsset {
+  id              String        @id @default(uuid())
+  inventoryItemId String        @unique
+  inventoryItem   InventoryItem  @relation(fields: [inventoryItemId], references: [id], onDelete: Cascade)
+  serialNumber    String?
+  condition       ItemCondition  @default(new)
+  calibrationDueAt DateTime?
+  warrantyEndsAt  DateTime?
+  maintenanceNotes String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @default(now()) @updatedAt
+
+  @@unique([serialNumber])
+}
+
+model Checkout {
+  id               String         @id @default(uuid())
+  status           CheckoutStatus  @default(open)
+  businessId       String
+  business         Business        @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  borrowerId       String
+  borrower         User            @relation("CheckoutBorrower", fields: [borrowerId], references: [id])
+  createdById      String
+  createdBy        User            @relation("CheckoutCreatedBy", fields: [createdById], references: [id])
+  projectId        String?
+  project          Project?        @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  checkedOutAt     DateTime        @default(now())
+  expectedReturnAt DateTime
+  returnedAt       DateTime?
+  notes            String?
+  items            CheckoutItem[]
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+
+  @@index([businessId, status])
+  @@index([borrowerId, status])
+  @@index([projectId])
+}
+
+model CheckoutItem {
+  id              String        @id @default(uuid())
+  checkoutId      String
+  checkout        Checkout      @relation(fields: [checkoutId], references: [id], onDelete: Cascade)
+  inventoryItemId String
+  inventoryItem   InventoryItem @relation(fields: [inventoryItemId], references: [id])
+  quantity        Int
+  returnedQuantity Int           @default(0)
+  returnedAt      DateTime?
+  allocations     ProjectAllocation[]
+
+  @@unique([checkoutId, inventoryItemId])
+  @@index([inventoryItemId])
+}
+
+model ProjectAllocation {
+  id              String        @id @default(uuid())
+  projectId       String
+  project         Project       @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  inventoryItemId String
+  inventoryItem   InventoryItem @relation(fields: [inventoryItemId], references: [id])
+  quantity        Int
+  consumedQuantity Int          @default(0)
+  checkoutItemId  String?
+  checkoutItem    CheckoutItem? @relation(fields: [checkoutItemId], references: [id], onDelete: SetNull)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@unique([projectId, inventoryItemId, checkoutItemId])
+  @@index([projectId])
+}
+
+model StockMovement {
+  id              String           @id @default(uuid())
+  type            StockMovementType
+  quantity        Int
+  reason          String?
+  inventoryItemId String
+  inventoryItem   InventoryItem    @relation(fields: [inventoryItemId], references: [id])
+  businessId      String
+  business        Business         @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  projectId       String?
+  project         Project?         @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  performedById   String
+  performedBy     User             @relation("StockMovementPerformedBy", fields: [performedById], references: [id])
+  createdAt       DateTime         @default(now())
+
+  @@index([businessId, createdAt])
+  @@index([inventoryItemId, createdAt])
+  @@index([projectId])
+}
+
+model FieldVisit {
+  id           String          @id @default(uuid())
+  title        String
+  status       FieldVisitStatus @default(planned)
+  businessId   String
+  business     Business        @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  siteId       String
+  site         Site            @relation(fields: [siteId], references: [id])
+  projectId    String?
+  project      Project?        @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  engineerId   String
+  engineer     User            @relation("FieldVisitEngineer", fields: [engineerId], references: [id])
+  startedAt    DateTime?
+  completedAt  DateTime?
+  notes        String?
+  photos       FieldPhoto[]
+  reports      FieldReport[]
+  createdAt    DateTime        @default(now())
+  updatedAt    DateTime        @updatedAt
+
+  @@index([businessId, status])
+  @@index([siteId])
+  @@index([projectId])
+}
+
+model FieldPhoto {
+  id             String      @id @default(uuid())
+  fieldVisitId   String
+  fieldVisit     FieldVisit  @relation(fields: [fieldVisitId], references: [id], onDelete: Cascade)
+  siteId         String?
+  site           Site?       @relation(fields: [siteId], references: [id], onDelete: SetNull)
+  storageUrl     String
+  originalName   String
+  mimeType       String
+  capturedAt     DateTime?
+  latitude       Decimal?    @db.Decimal(10, 7)
+  longitude      Decimal?    @db.Decimal(10, 7)
+  issueType      String?
+  notes          String?
+  metadata       Json?
+  createdAt      DateTime    @default(now())
+
+  @@index([fieldVisitId])
+  @@index([siteId, capturedAt])
+}
+
+model FieldReport {
+  id            String           @id @default(uuid())
+  title         String
+  status        FieldReportStatus @default(draft)
+  fieldVisitId  String
+  fieldVisit    FieldVisit       @relation(fields: [fieldVisitId], references: [id], onDelete: Cascade)
+  generatedById String
+  generatedBy   User             @relation("FieldReportGeneratedBy", fields: [generatedById], references: [id])
+  notes         String?
+  fileUrl       String?
+  generatedAt   DateTime?
+  finalisedAt   DateTime?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@index([fieldVisitId])
+}
+
+model SupportTicket {
+  id          String   @id @default(uuid())
+  subject     String
+  description String
+  status      String   @default("open")
+  providerId  String?
+  context     Json?
+  businessId  String
+  business    Business @relation(fields: [businessId], references: [id], onDelete: Cascade)
+  createdById String
+  createdBy   User     @relation("SupportTicketCreatedBy", fields: [createdById], references: [id])
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([businessId, status])
 }

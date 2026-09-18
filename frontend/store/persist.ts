@@ -2,7 +2,7 @@ import type { AccessState } from "@/store/slices/access.slice";
 import type { FiltersState } from "@/store/slices/filters.slice";
 import type { UiState } from "@/store/slices/ui.slice";
 
-export const PERSIST_KEY = "inventree:state:v1";
+export const PERSIST_KEY = "forgetrack:state:v1";
 
 /**
  * Only these fields survive a reload. `mobileNavOpen` is intentionally excluded —

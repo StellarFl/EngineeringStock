@@ -1,9 +1,8 @@
-# Inventree
+# ForgeTrack
 
-Inventree is a full-stack inventory management platform for small and
-medium-sized businesses. It gives staff and administrators a central place to
-manage products, monitor stock, process orders, manage users, and receive
-supplier notifications when inventory reaches a configured low-stock level.
+ForgeTrack is a full-stack inventory and field-reporting platform for
+engineering teams. It helps teams find parts by specification, track shared
+equipment, allocate items to projects, and turn site photos into reports.
 
 The application is split into a Next.js frontend and a TypeScript/Express
 backend. The backend exposes a REST API backed by PostgreSQL through Prisma,

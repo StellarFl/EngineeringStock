@@ -11,12 +11,12 @@ export function Logo({
   return (
     <span
       className={cn(
-        "font-extrabold tracking-tight text-brand-600 select-none",
-        tight ? "text-xl" : "text-2xl tracking-[0.08em] uppercase",
+        "font-semibold tracking-[-0.04em] text-brand-700 select-none",
+        tight ? "text-xl" : "text-2xl tracking-[0.04em] uppercase",
         className,
       )}
     >
-      INVENTREE
+      FORGETRACK
     </span>
   );
 }

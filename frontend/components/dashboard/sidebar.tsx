@@ -36,7 +36,7 @@ function NavSections({
     <>
       <nav
         aria-label="Main"
-        className="min-h-0 flex-1 space-y-1 overflow-y-auto px-3"
+        className={cn("min-h-0 flex-1 space-y-1 overflow-y-auto px-4", !onNavigate && "flex flex-row flex-wrap items-center gap-1 space-y-0")}
       >
         {primaryNav.map((item) => (
           item.href === "/users" ? (
@@ -58,7 +58,7 @@ function NavSections({
         ))}
       </nav>
 
-      <div className="space-y-1 border-t border-ink-200 px-3 pt-3">
+      <div className="flex flex-col gap-1 border-t border-white/15 px-4 pt-4 lg:flex-row lg:border-l lg:border-t-0 lg:pt-0 lg:pl-4 lg:pt-0">
         {secondaryNav.map((item) => (
           <button
             key={item.label}
@@ -66,8 +66,8 @@ function NavSections({
             title={collapsed ? item.label : undefined}
             onClick={() => logout()}
             className={cn(
-              "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-600",
-              "transition-colors duration-200 ease-out-soft hover:bg-ink-100 hover:text-ink-900",
+              "flex w-full items-center gap-3 px-3 py-2.5 text-sm font-medium text-brand-100",
+              "transition-colors duration-200 ease-out-soft hover:bg-white/10 hover:text-white",
               collapsed && "justify-center px-2",
             )}
           >
@@ -81,41 +81,30 @@ function NavSections({
 }
 
 export function DesktopSidebar() {
-  const collapsed = useAppSelector((s) => s.ui.sidebarCollapsed);
-  const dispatch = useAppDispatch();
+  const collapsed = false;
 
   return (
     <aside
       className={cn(
-        "hidden shrink-0 flex-col gap-4 border-r border-ink-200 bg-white py-5 lg:flex",
-        "sticky top-0 h-dvh",
-        "transition-[width] duration-300 ease-out-soft",
-        collapsed ? "w-[76px]" : "w-64",
+        "hidden w-full flex-row items-center gap-6 border-b border-brand-900 bg-brand-900 px-6 py-4 text-brand-50 lg:flex",
+        "sticky top-0 z-40",
       )}
     >
       <div
         className={cn(
-          "flex items-center px-4",
-          collapsed ? "justify-center" : "justify-between",
+          "flex shrink-0 items-center px-0",
+          "justify-between",
         )}
       >
         {!collapsed && (
           <div className="min-w-0">
-            <Logo tight />
-            <p className="mt-0.5 truncate text-[10px] font-semibold tracking-wider text-ink-500 uppercase">
-              Industrial Inventory
+            <Logo tight className="text-brand-50" />
+            <p className="mt-1 truncate font-mono text-[9px] tracking-[0.18em] text-brand-200 uppercase">
+              Field operations / 01
             </p>
           </div>
         )}
-        <button
-          type="button"
-          onClick={() => dispatch(toggleSidebar())}
-          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
-          aria-expanded={!collapsed}
-          className="grid size-8 shrink-0 place-items-center rounded-md text-ink-500 transition-colors duration-150 hover:bg-ink-100 hover:text-ink-800"
-        >
-          <AppIcon name={icons.panelLeft} className="size-4.5" />
-        </button>
+        <span aria-hidden className="hidden size-8 shrink-0 lg:block" />
       </div>
 
       <NavSections collapsed={collapsed} />
@@ -157,7 +146,7 @@ export function MobileSidebar() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={close}
-            className="absolute inset-0 bg-ink-900/40 backdrop-blur-sm"
+            className="absolute inset-0 bg-brand-900/70"
           />
           <motion.div
             role="dialog"
@@ -169,20 +158,20 @@ export function MobileSidebar() {
             // Spring rather than a duration — reads as physical, and interrupting
             // it mid-flight (open → close fast) stays smooth instead of snapping.
             transition={{ type: "spring", stiffness: 420, damping: 38 }}
-            className="absolute inset-y-0 left-0 flex w-72 max-w-[82vw] flex-col gap-4 border-r border-ink-200 bg-white py-5"
+            className="absolute inset-y-0 left-0 flex w-72 max-w-[82vw] flex-col gap-6 border-r border-brand-900 bg-brand-900 py-6 text-brand-50"
           >
             <div className="flex items-center justify-between px-4">
               <div className="min-w-0">
-                <Logo tight />
-                <p className="mt-0.5 truncate text-[10px] font-semibold tracking-wider text-ink-500 uppercase">
-                  Industrial Inventory
+                <Logo tight className="text-brand-50" />
+                <p className="mt-1 truncate font-mono text-[9px] tracking-[0.18em] text-brand-200 uppercase">
+                  Field operations / 01
                 </p>
               </div>
               <button
                 type="button"
                 onClick={close}
                 aria-label="Close navigation"
-                className="grid size-8 place-items-center rounded-md text-ink-500 transition-colors duration-150 hover:bg-ink-100 hover:text-ink-800"
+                className="grid size-8 place-items-center text-brand-200 transition-colors duration-150 hover:bg-white/10 hover:text-white"
               >
                 <AppIcon name={icons.close} className="size-5" />
               </button>

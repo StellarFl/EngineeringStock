@@ -5,6 +5,7 @@ import { AppIcon, icons } from "@/components/ui/app-icon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import type { FormEvent } from "react";
 
 export default function SignupPage() {
   const { mutate, isPending } = useRegister();
@@ -16,7 +17,7 @@ export default function SignupPage() {
 
   const router = useRouter();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError("");
 
@@ -47,7 +48,7 @@ export default function SignupPage() {
           Get started
         </h1>
         <p className="max-w-sm text-sm leading-6 text-stone-600">
-          Create an Inventree account to manage inventory with your team.
+          Create a ForgeTrack account to manage engineering inventory with your team.
         </p>
       </div>
 

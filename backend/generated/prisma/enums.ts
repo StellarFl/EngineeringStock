@@ -35,3 +35,74 @@ export const InvitationStatus = {
 } as const
 
 export type InvitationStatus = (typeof InvitationStatus)[keyof typeof InvitationStatus]
+
+
+export const InventoryCategory = {
+  consumable: 'consumable',
+  tool: 'tool',
+  equipment: 'equipment'
+} as const
+
+export type InventoryCategory = (typeof InventoryCategory)[keyof typeof InventoryCategory]
+
+
+export const ProjectStatus = {
+  planned: 'planned',
+  active: 'active',
+  on_hold: 'on_hold',
+  completed: 'completed',
+  cancelled: 'cancelled'
+} as const
+
+export type ProjectStatus = (typeof ProjectStatus)[keyof typeof ProjectStatus]
+
+
+export const CheckoutStatus = {
+  open: 'open',
+  partially_returned: 'partially_returned',
+  returned: 'returned',
+  overdue: 'overdue'
+} as const
+
+export type CheckoutStatus = (typeof CheckoutStatus)[keyof typeof CheckoutStatus]
+
+
+export const ItemCondition = {
+  new: 'new',
+  good: 'good',
+  needs_repair: 'needs_repair',
+  retired: 'retired'
+} as const
+
+export type ItemCondition = (typeof ItemCondition)[keyof typeof ItemCondition]
+
+
+export const StockMovementType = {
+  receipt: 'receipt',
+  adjustment: 'adjustment',
+  consumption: 'consumption',
+  return: 'return',
+  loss: 'loss',
+  damage: 'damage'
+} as const
+
+export type StockMovementType = (typeof StockMovementType)[keyof typeof StockMovementType]
+
+
+export const FieldVisitStatus = {
+  planned: 'planned',
+  in_progress: 'in_progress',
+  completed: 'completed',
+  cancelled: 'cancelled'
+} as const
+
+export type FieldVisitStatus = (typeof FieldVisitStatus)[keyof typeof FieldVisitStatus]
+
+
+export const FieldReportStatus = {
+  draft: 'draft',
+  generated: 'generated',
+  finalised: 'finalised'
+} as const
+
+export type FieldReportStatus = (typeof FieldReportStatus)[keyof typeof FieldReportStatus]

@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 
-import { DashboardPageClient } from "@/components/dashboard/dashboard-page-client";
+import { EngineeringDashboard } from "@/components/engineering/engineering-dashboard";
 
 export const metadata: Metadata = {
   title: "Overview",
-  description: "Real-time inventory metrics and order status.",
+  description: "Engineering inventory, project, and equipment metrics.",
 };
 
 
 export default function DashboardPage() {
-  return (
-    <DashboardPageClient />
-  );
+  return <EngineeringDashboard />;
 }

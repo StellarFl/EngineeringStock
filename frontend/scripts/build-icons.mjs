@@ -25,6 +25,7 @@ const ICON_NAMES = [
   "lucide:users",
   "lucide:settings",
   "lucide:life-buoy",
+  "lucide:message-circle",
   "lucide:search",
   "lucide:bell",
   "lucide:history",

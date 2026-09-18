@@ -8,7 +8,7 @@ import type {
 
 export type { AuthSession, AuthUser, LoginCredentials, LoginResponse, RegisterCredentials };
 
-const AUTH_STORAGE_KEY = "inventree:auth";
+const AUTH_STORAGE_KEY = "forgetrack:auth";
 
 export function saveAuthSession(session: AuthSession) {
   if (typeof window === "undefined") return;

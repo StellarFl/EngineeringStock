@@ -7,6 +7,7 @@ import ordersRoute from "./routes/orders.route"
 import userRoute from "./routes/user.route"
 import dashboardRoute from './routes/dashboard.route'
 import invitationRoute from './routes/invitation.route'
+import engineeringRoute from './routes/engineering.route'
 import { errorHandler } from "./middleware/error-handler"
 import swaggerUi from "swagger-ui-express"
 import { swaggerSpec } from "./config/swagger"
@@ -19,8 +20,6 @@ const port = Number(process.env.SERVER_PORT ?? process.env.PORT ?? 3000)
 const allowedOrigins = new Set([
     "http://localhost:3000",
     "http://localhost:3001",
-    "https://inventree-crud.vercel.app",
-    "https://inventree-nvqk.onrender.com/api",
     process.env.CLIENT_URL ?? "",
 ].filter(Boolean))
 
@@ -42,6 +41,7 @@ app.use('/api/orders', ordersRoute)
 app.use('/api/users', userRoute)
 app.use('/api/dashboard', dashboardRoute)
 app.use('/api/invitation', invitationRoute)
+app.use('/api/engineering', engineeringRoute)
 app.use(limiter)
 
 app.use(errorHandler)

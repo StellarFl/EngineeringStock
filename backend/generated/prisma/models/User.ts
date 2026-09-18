@@ -225,6 +225,13 @@ export type UserWhereInput = {
   memberships?: Prisma.MembershipListRelationFilter
   invitations?: Prisma.InvitationListRelationFilter
   passwordResetToken?: Prisma.XOR<Prisma.PasswordResetTokenNullableScalarRelationFilter, Prisma.PasswordResetTokenWhereInput> | null
+  projectsCreated?: Prisma.ProjectListRelationFilter
+  checkoutsBorrowed?: Prisma.CheckoutListRelationFilter
+  checkoutsCreated?: Prisma.CheckoutListRelationFilter
+  stockMovements?: Prisma.StockMovementListRelationFilter
+  fieldVisits?: Prisma.FieldVisitListRelationFilter
+  fieldReports?: Prisma.FieldReportListRelationFilter
+  supportTickets?: Prisma.SupportTicketListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -241,6 +248,13 @@ export type UserOrderByWithRelationInput = {
   memberships?: Prisma.MembershipOrderByRelationAggregateInput
   invitations?: Prisma.InvitationOrderByRelationAggregateInput
   passwordResetToken?: Prisma.PasswordResetTokenOrderByWithRelationInput
+  projectsCreated?: Prisma.ProjectOrderByRelationAggregateInput
+  checkoutsBorrowed?: Prisma.CheckoutOrderByRelationAggregateInput
+  checkoutsCreated?: Prisma.CheckoutOrderByRelationAggregateInput
+  stockMovements?: Prisma.StockMovementOrderByRelationAggregateInput
+  fieldVisits?: Prisma.FieldVisitOrderByRelationAggregateInput
+  fieldReports?: Prisma.FieldReportOrderByRelationAggregateInput
+  supportTickets?: Prisma.SupportTicketOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -260,6 +274,13 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   memberships?: Prisma.MembershipListRelationFilter
   invitations?: Prisma.InvitationListRelationFilter
   passwordResetToken?: Prisma.XOR<Prisma.PasswordResetTokenNullableScalarRelationFilter, Prisma.PasswordResetTokenWhereInput> | null
+  projectsCreated?: Prisma.ProjectListRelationFilter
+  checkoutsBorrowed?: Prisma.CheckoutListRelationFilter
+  checkoutsCreated?: Prisma.CheckoutListRelationFilter
+  stockMovements?: Prisma.StockMovementListRelationFilter
+  fieldVisits?: Prisma.FieldVisitListRelationFilter
+  fieldReports?: Prisma.FieldReportListRelationFilter
+  supportTickets?: Prisma.SupportTicketListRelationFilter
 }, "id" | "email" | "providerId">
 
 export type UserOrderByWithAggregationInput = {
@@ -308,6 +329,13 @@ export type UserCreateInput = {
   memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
   invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
   passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -324,6 +352,13 @@ export type UserUncheckedCreateInput = {
   memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
   invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
   passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUpdateInput = {
@@ -340,6 +375,13 @@ export type UserUpdateInput = {
   memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
   invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
   passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -356,6 +398,13 @@ export type UserUncheckedUpdateInput = {
   memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
   invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
   passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -441,6 +490,11 @@ export type UserScalarRelationFilter = {
   isNot?: Prisma.UserWhereInput
 }
 
+export type UserNullableScalarRelationFilter = {
+  is?: Prisma.UserWhereInput | null
+  isNot?: Prisma.UserWhereInput | null
+}
+
 export type StringFieldUpdateOperationsInput = {
   set?: string
 }
@@ -503,6 +557,106 @@ export type UserUpdateOneRequiredWithoutInvitationsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutInvitationsInput, Prisma.UserUpdateWithoutInvitationsInput>, Prisma.UserUncheckedUpdateWithoutInvitationsInput>
 }
 
+export type UserCreateNestedOneWithoutProjectsCreatedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutProjectsCreatedInput, Prisma.UserUncheckedCreateWithoutProjectsCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutProjectsCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneWithoutProjectsCreatedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutProjectsCreatedInput, Prisma.UserUncheckedCreateWithoutProjectsCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutProjectsCreatedInput
+  upsert?: Prisma.UserUpsertWithoutProjectsCreatedInput
+  disconnect?: Prisma.UserWhereInput | boolean
+  delete?: Prisma.UserWhereInput | boolean
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutProjectsCreatedInput, Prisma.UserUpdateWithoutProjectsCreatedInput>, Prisma.UserUncheckedUpdateWithoutProjectsCreatedInput>
+}
+
+export type UserCreateNestedOneWithoutCheckoutsBorrowedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsBorrowedInput, Prisma.UserUncheckedCreateWithoutCheckoutsBorrowedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCheckoutsBorrowedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserCreateNestedOneWithoutCheckoutsCreatedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsCreatedInput, Prisma.UserUncheckedCreateWithoutCheckoutsCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCheckoutsCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutCheckoutsBorrowedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsBorrowedInput, Prisma.UserUncheckedCreateWithoutCheckoutsBorrowedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCheckoutsBorrowedInput
+  upsert?: Prisma.UserUpsertWithoutCheckoutsBorrowedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCheckoutsBorrowedInput, Prisma.UserUpdateWithoutCheckoutsBorrowedInput>, Prisma.UserUncheckedUpdateWithoutCheckoutsBorrowedInput>
+}
+
+export type UserUpdateOneRequiredWithoutCheckoutsCreatedNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsCreatedInput, Prisma.UserUncheckedCreateWithoutCheckoutsCreatedInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutCheckoutsCreatedInput
+  upsert?: Prisma.UserUpsertWithoutCheckoutsCreatedInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCheckoutsCreatedInput, Prisma.UserUpdateWithoutCheckoutsCreatedInput>, Prisma.UserUncheckedUpdateWithoutCheckoutsCreatedInput>
+}
+
+export type UserCreateNestedOneWithoutStockMovementsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStockMovementsInput, Prisma.UserUncheckedCreateWithoutStockMovementsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStockMovementsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutStockMovementsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutStockMovementsInput, Prisma.UserUncheckedCreateWithoutStockMovementsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutStockMovementsInput
+  upsert?: Prisma.UserUpsertWithoutStockMovementsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutStockMovementsInput, Prisma.UserUpdateWithoutStockMovementsInput>, Prisma.UserUncheckedUpdateWithoutStockMovementsInput>
+}
+
+export type UserCreateNestedOneWithoutFieldVisitsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFieldVisitsInput, Prisma.UserUncheckedCreateWithoutFieldVisitsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFieldVisitsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutFieldVisitsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFieldVisitsInput, Prisma.UserUncheckedCreateWithoutFieldVisitsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFieldVisitsInput
+  upsert?: Prisma.UserUpsertWithoutFieldVisitsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFieldVisitsInput, Prisma.UserUpdateWithoutFieldVisitsInput>, Prisma.UserUncheckedUpdateWithoutFieldVisitsInput>
+}
+
+export type UserCreateNestedOneWithoutFieldReportsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFieldReportsInput, Prisma.UserUncheckedCreateWithoutFieldReportsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFieldReportsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutFieldReportsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutFieldReportsInput, Prisma.UserUncheckedCreateWithoutFieldReportsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutFieldReportsInput
+  upsert?: Prisma.UserUpsertWithoutFieldReportsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutFieldReportsInput, Prisma.UserUpdateWithoutFieldReportsInput>, Prisma.UserUncheckedUpdateWithoutFieldReportsInput>
+}
+
+export type UserCreateNestedOneWithoutSupportTicketsInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSupportTicketsInput, Prisma.UserUncheckedCreateWithoutSupportTicketsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSupportTicketsInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutSupportTicketsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutSupportTicketsInput, Prisma.UserUncheckedCreateWithoutSupportTicketsInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutSupportTicketsInput
+  upsert?: Prisma.UserUpsertWithoutSupportTicketsInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutSupportTicketsInput, Prisma.UserUpdateWithoutSupportTicketsInput>, Prisma.UserUncheckedUpdateWithoutSupportTicketsInput>
+}
+
 export type UserCreateWithoutPasswordResetTokenInput = {
   id?: string
   name: string
@@ -516,6 +670,13 @@ export type UserCreateWithoutPasswordResetTokenInput = {
   updatedAt?: Date | string
   memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
   invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutPasswordResetTokenInput = {
@@ -531,6 +692,13 @@ export type UserUncheckedCreateWithoutPasswordResetTokenInput = {
   updatedAt?: Date | string
   memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
   invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutPasswordResetTokenInput = {
@@ -562,6 +730,13 @@ export type UserUpdateWithoutPasswordResetTokenInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
   invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutPasswordResetTokenInput = {
@@ -577,6 +752,13 @@ export type UserUncheckedUpdateWithoutPasswordResetTokenInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
   invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateWithoutMembershipsInput = {
@@ -592,6 +774,13 @@ export type UserCreateWithoutMembershipsInput = {
   updatedAt?: Date | string
   invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
   passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutMembershipsInput = {
@@ -607,6 +796,13 @@ export type UserUncheckedCreateWithoutMembershipsInput = {
   updatedAt?: Date | string
   invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
   passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutMembershipsInput = {
@@ -638,6 +834,13 @@ export type UserUpdateWithoutMembershipsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
   passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutMembershipsInput = {
@@ -653,6 +856,13 @@ export type UserUncheckedUpdateWithoutMembershipsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
   passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserCreateWithoutInvitationsInput = {
@@ -668,6 +878,13 @@ export type UserCreateWithoutInvitationsInput = {
   updatedAt?: Date | string
   memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
   passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserUncheckedCreateWithoutInvitationsInput = {
@@ -683,6 +900,13 @@ export type UserUncheckedCreateWithoutInvitationsInput = {
   updatedAt?: Date | string
   memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
   passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
 }
 
 export type UserCreateOrConnectWithoutInvitationsInput = {
@@ -714,6 +938,13 @@ export type UserUpdateWithoutInvitationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
   passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
 }
 
 export type UserUncheckedUpdateWithoutInvitationsInput = {
@@ -729,6 +960,741 @@ export type UserUncheckedUpdateWithoutInvitationsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
   passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutProjectsCreatedInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutProjectsCreatedInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutProjectsCreatedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutProjectsCreatedInput, Prisma.UserUncheckedCreateWithoutProjectsCreatedInput>
+}
+
+export type UserUpsertWithoutProjectsCreatedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutProjectsCreatedInput, Prisma.UserUncheckedUpdateWithoutProjectsCreatedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutProjectsCreatedInput, Prisma.UserUncheckedCreateWithoutProjectsCreatedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutProjectsCreatedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutProjectsCreatedInput, Prisma.UserUncheckedUpdateWithoutProjectsCreatedInput>
+}
+
+export type UserUpdateWithoutProjectsCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutProjectsCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutCheckoutsBorrowedInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutCheckoutsBorrowedInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutCheckoutsBorrowedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsBorrowedInput, Prisma.UserUncheckedCreateWithoutCheckoutsBorrowedInput>
+}
+
+export type UserCreateWithoutCheckoutsCreatedInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutCheckoutsCreatedInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutCheckoutsCreatedInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsCreatedInput, Prisma.UserUncheckedCreateWithoutCheckoutsCreatedInput>
+}
+
+export type UserUpsertWithoutCheckoutsBorrowedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCheckoutsBorrowedInput, Prisma.UserUncheckedUpdateWithoutCheckoutsBorrowedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsBorrowedInput, Prisma.UserUncheckedCreateWithoutCheckoutsBorrowedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCheckoutsBorrowedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCheckoutsBorrowedInput, Prisma.UserUncheckedUpdateWithoutCheckoutsBorrowedInput>
+}
+
+export type UserUpdateWithoutCheckoutsBorrowedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCheckoutsBorrowedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUpsertWithoutCheckoutsCreatedInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutCheckoutsCreatedInput, Prisma.UserUncheckedUpdateWithoutCheckoutsCreatedInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutCheckoutsCreatedInput, Prisma.UserUncheckedCreateWithoutCheckoutsCreatedInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutCheckoutsCreatedInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutCheckoutsCreatedInput, Prisma.UserUncheckedUpdateWithoutCheckoutsCreatedInput>
+}
+
+export type UserUpdateWithoutCheckoutsCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutCheckoutsCreatedInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutStockMovementsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutStockMovementsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutStockMovementsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutStockMovementsInput, Prisma.UserUncheckedCreateWithoutStockMovementsInput>
+}
+
+export type UserUpsertWithoutStockMovementsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutStockMovementsInput, Prisma.UserUncheckedUpdateWithoutStockMovementsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutStockMovementsInput, Prisma.UserUncheckedCreateWithoutStockMovementsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutStockMovementsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutStockMovementsInput, Prisma.UserUncheckedUpdateWithoutStockMovementsInput>
+}
+
+export type UserUpdateWithoutStockMovementsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutStockMovementsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutFieldVisitsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutFieldVisitsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutFieldVisitsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFieldVisitsInput, Prisma.UserUncheckedCreateWithoutFieldVisitsInput>
+}
+
+export type UserUpsertWithoutFieldVisitsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFieldVisitsInput, Prisma.UserUncheckedUpdateWithoutFieldVisitsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFieldVisitsInput, Prisma.UserUncheckedCreateWithoutFieldVisitsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFieldVisitsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFieldVisitsInput, Prisma.UserUncheckedUpdateWithoutFieldVisitsInput>
+}
+
+export type UserUpdateWithoutFieldVisitsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFieldVisitsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutFieldReportsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  supportTickets?: Prisma.SupportTicketCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserUncheckedCreateWithoutFieldReportsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  supportTickets?: Prisma.SupportTicketUncheckedCreateNestedManyWithoutCreatedByInput
+}
+
+export type UserCreateOrConnectWithoutFieldReportsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutFieldReportsInput, Prisma.UserUncheckedCreateWithoutFieldReportsInput>
+}
+
+export type UserUpsertWithoutFieldReportsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutFieldReportsInput, Prisma.UserUncheckedUpdateWithoutFieldReportsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutFieldReportsInput, Prisma.UserUncheckedCreateWithoutFieldReportsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutFieldReportsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutFieldReportsInput, Prisma.UserUncheckedUpdateWithoutFieldReportsInput>
+}
+
+export type UserUpdateWithoutFieldReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  supportTickets?: Prisma.SupportTicketUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutFieldReportsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  supportTickets?: Prisma.SupportTicketUncheckedUpdateManyWithoutCreatedByNestedInput
+}
+
+export type UserCreateWithoutSupportTicketsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportCreateNestedManyWithoutGeneratedByInput
+}
+
+export type UserUncheckedCreateWithoutSupportTicketsInput = {
+  id?: string
+  name: string
+  email: string
+  password?: string | null
+  provider?: $Enums.AuthProvider | null
+  providerId?: string | null
+  avatar?: string | null
+  deletedAt?: Date | string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  memberships?: Prisma.MembershipUncheckedCreateNestedManyWithoutUserInput
+  invitations?: Prisma.InvitationUncheckedCreateNestedManyWithoutInvitedByInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedCreateNestedOneWithoutUserInput
+  projectsCreated?: Prisma.ProjectUncheckedCreateNestedManyWithoutCreatedByInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedCreateNestedManyWithoutBorrowerInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedCreateNestedManyWithoutCreatedByInput
+  stockMovements?: Prisma.StockMovementUncheckedCreateNestedManyWithoutPerformedByInput
+  fieldVisits?: Prisma.FieldVisitUncheckedCreateNestedManyWithoutEngineerInput
+  fieldReports?: Prisma.FieldReportUncheckedCreateNestedManyWithoutGeneratedByInput
+}
+
+export type UserCreateOrConnectWithoutSupportTicketsInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutSupportTicketsInput, Prisma.UserUncheckedCreateWithoutSupportTicketsInput>
+}
+
+export type UserUpsertWithoutSupportTicketsInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutSupportTicketsInput, Prisma.UserUncheckedUpdateWithoutSupportTicketsInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutSupportTicketsInput, Prisma.UserUncheckedCreateWithoutSupportTicketsInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutSupportTicketsInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutSupportTicketsInput, Prisma.UserUncheckedUpdateWithoutSupportTicketsInput>
+}
+
+export type UserUpdateWithoutSupportTicketsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUpdateManyWithoutGeneratedByNestedInput
+}
+
+export type UserUncheckedUpdateWithoutSupportTicketsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  provider?: Prisma.NullableEnumAuthProviderFieldUpdateOperationsInput | $Enums.AuthProvider | null
+  providerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  avatar?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  deletedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  memberships?: Prisma.MembershipUncheckedUpdateManyWithoutUserNestedInput
+  invitations?: Prisma.InvitationUncheckedUpdateManyWithoutInvitedByNestedInput
+  passwordResetToken?: Prisma.PasswordResetTokenUncheckedUpdateOneWithoutUserNestedInput
+  projectsCreated?: Prisma.ProjectUncheckedUpdateManyWithoutCreatedByNestedInput
+  checkoutsBorrowed?: Prisma.CheckoutUncheckedUpdateManyWithoutBorrowerNestedInput
+  checkoutsCreated?: Prisma.CheckoutUncheckedUpdateManyWithoutCreatedByNestedInput
+  stockMovements?: Prisma.StockMovementUncheckedUpdateManyWithoutPerformedByNestedInput
+  fieldVisits?: Prisma.FieldVisitUncheckedUpdateManyWithoutEngineerNestedInput
+  fieldReports?: Prisma.FieldReportUncheckedUpdateManyWithoutGeneratedByNestedInput
 }
 
 
@@ -739,11 +1705,25 @@ export type UserUncheckedUpdateWithoutInvitationsInput = {
 export type UserCountOutputType = {
   memberships: number
   invitations: number
+  projectsCreated: number
+  checkoutsBorrowed: number
+  checkoutsCreated: number
+  stockMovements: number
+  fieldVisits: number
+  fieldReports: number
+  supportTickets: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   memberships?: boolean | UserCountOutputTypeCountMembershipsArgs
   invitations?: boolean | UserCountOutputTypeCountInvitationsArgs
+  projectsCreated?: boolean | UserCountOutputTypeCountProjectsCreatedArgs
+  checkoutsBorrowed?: boolean | UserCountOutputTypeCountCheckoutsBorrowedArgs
+  checkoutsCreated?: boolean | UserCountOutputTypeCountCheckoutsCreatedArgs
+  stockMovements?: boolean | UserCountOutputTypeCountStockMovementsArgs
+  fieldVisits?: boolean | UserCountOutputTypeCountFieldVisitsArgs
+  fieldReports?: boolean | UserCountOutputTypeCountFieldReportsArgs
+  supportTickets?: boolean | UserCountOutputTypeCountSupportTicketsArgs
 }
 
 /**
@@ -770,6 +1750,55 @@ export type UserCountOutputTypeCountInvitationsArgs<ExtArgs extends runtime.Type
   where?: Prisma.InvitationWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountProjectsCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ProjectWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCheckoutsBorrowedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CheckoutWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountCheckoutsCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CheckoutWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountStockMovementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StockMovementWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFieldVisitsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FieldVisitWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountFieldReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.FieldReportWhereInput
+}
+
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountSupportTicketsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SupportTicketWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -785,6 +1814,13 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   memberships?: boolean | Prisma.User$membershipsArgs<ExtArgs>
   invitations?: boolean | Prisma.User$invitationsArgs<ExtArgs>
   passwordResetToken?: boolean | Prisma.User$passwordResetTokenArgs<ExtArgs>
+  projectsCreated?: boolean | Prisma.User$projectsCreatedArgs<ExtArgs>
+  checkoutsBorrowed?: boolean | Prisma.User$checkoutsBorrowedArgs<ExtArgs>
+  checkoutsCreated?: boolean | Prisma.User$checkoutsCreatedArgs<ExtArgs>
+  stockMovements?: boolean | Prisma.User$stockMovementsArgs<ExtArgs>
+  fieldVisits?: boolean | Prisma.User$fieldVisitsArgs<ExtArgs>
+  fieldReports?: boolean | Prisma.User$fieldReportsArgs<ExtArgs>
+  supportTickets?: boolean | Prisma.User$supportTicketsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -832,6 +1868,13 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   memberships?: boolean | Prisma.User$membershipsArgs<ExtArgs>
   invitations?: boolean | Prisma.User$invitationsArgs<ExtArgs>
   passwordResetToken?: boolean | Prisma.User$passwordResetTokenArgs<ExtArgs>
+  projectsCreated?: boolean | Prisma.User$projectsCreatedArgs<ExtArgs>
+  checkoutsBorrowed?: boolean | Prisma.User$checkoutsBorrowedArgs<ExtArgs>
+  checkoutsCreated?: boolean | Prisma.User$checkoutsCreatedArgs<ExtArgs>
+  stockMovements?: boolean | Prisma.User$stockMovementsArgs<ExtArgs>
+  fieldVisits?: boolean | Prisma.User$fieldVisitsArgs<ExtArgs>
+  fieldReports?: boolean | Prisma.User$fieldReportsArgs<ExtArgs>
+  supportTickets?: boolean | Prisma.User$supportTicketsArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -843,6 +1886,13 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     memberships: Prisma.$MembershipPayload<ExtArgs>[]
     invitations: Prisma.$InvitationPayload<ExtArgs>[]
     passwordResetToken: Prisma.$PasswordResetTokenPayload<ExtArgs> | null
+    projectsCreated: Prisma.$ProjectPayload<ExtArgs>[]
+    checkoutsBorrowed: Prisma.$CheckoutPayload<ExtArgs>[]
+    checkoutsCreated: Prisma.$CheckoutPayload<ExtArgs>[]
+    stockMovements: Prisma.$StockMovementPayload<ExtArgs>[]
+    fieldVisits: Prisma.$FieldVisitPayload<ExtArgs>[]
+    fieldReports: Prisma.$FieldReportPayload<ExtArgs>[]
+    supportTickets: Prisma.$SupportTicketPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1252,6 +2302,13 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   memberships<T extends Prisma.User$membershipsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$membershipsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MembershipPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   invitations<T extends Prisma.User$invitationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$invitationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$InvitationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   passwordResetToken<T extends Prisma.User$passwordResetTokenArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$passwordResetTokenArgs<ExtArgs>>): Prisma.Prisma__PasswordResetTokenClient<runtime.Types.Result.GetResult<Prisma.$PasswordResetTokenPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  projectsCreated<T extends Prisma.User$projectsCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$projectsCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProjectPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  checkoutsBorrowed<T extends Prisma.User$checkoutsBorrowedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$checkoutsBorrowedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CheckoutPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  checkoutsCreated<T extends Prisma.User$checkoutsCreatedArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$checkoutsCreatedArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CheckoutPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  stockMovements<T extends Prisma.User$stockMovementsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$stockMovementsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StockMovementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  fieldVisits<T extends Prisma.User$fieldVisitsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$fieldVisitsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FieldVisitPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  fieldReports<T extends Prisma.User$fieldReportsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$fieldReportsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$FieldReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  supportTickets<T extends Prisma.User$supportTicketsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$supportTicketsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SupportTicketPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1748,6 +2805,174 @@ export type User$passwordResetTokenArgs<ExtArgs extends runtime.Types.Extensions
    */
   include?: Prisma.PasswordResetTokenInclude<ExtArgs> | null
   where?: Prisma.PasswordResetTokenWhereInput
+}
+
+/**
+ * User.projectsCreated
+ */
+export type User$projectsCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Project
+   */
+  select?: Prisma.ProjectSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Project
+   */
+  omit?: Prisma.ProjectOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ProjectInclude<ExtArgs> | null
+  where?: Prisma.ProjectWhereInput
+  orderBy?: Prisma.ProjectOrderByWithRelationInput | Prisma.ProjectOrderByWithRelationInput[]
+  cursor?: Prisma.ProjectWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ProjectScalarFieldEnum | Prisma.ProjectScalarFieldEnum[]
+}
+
+/**
+ * User.checkoutsBorrowed
+ */
+export type User$checkoutsBorrowedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Checkout
+   */
+  select?: Prisma.CheckoutSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Checkout
+   */
+  omit?: Prisma.CheckoutOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CheckoutInclude<ExtArgs> | null
+  where?: Prisma.CheckoutWhereInput
+  orderBy?: Prisma.CheckoutOrderByWithRelationInput | Prisma.CheckoutOrderByWithRelationInput[]
+  cursor?: Prisma.CheckoutWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CheckoutScalarFieldEnum | Prisma.CheckoutScalarFieldEnum[]
+}
+
+/**
+ * User.checkoutsCreated
+ */
+export type User$checkoutsCreatedArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Checkout
+   */
+  select?: Prisma.CheckoutSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Checkout
+   */
+  omit?: Prisma.CheckoutOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CheckoutInclude<ExtArgs> | null
+  where?: Prisma.CheckoutWhereInput
+  orderBy?: Prisma.CheckoutOrderByWithRelationInput | Prisma.CheckoutOrderByWithRelationInput[]
+  cursor?: Prisma.CheckoutWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CheckoutScalarFieldEnum | Prisma.CheckoutScalarFieldEnum[]
+}
+
+/**
+ * User.stockMovements
+ */
+export type User$stockMovementsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StockMovement
+   */
+  select?: Prisma.StockMovementSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StockMovement
+   */
+  omit?: Prisma.StockMovementOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StockMovementInclude<ExtArgs> | null
+  where?: Prisma.StockMovementWhereInput
+  orderBy?: Prisma.StockMovementOrderByWithRelationInput | Prisma.StockMovementOrderByWithRelationInput[]
+  cursor?: Prisma.StockMovementWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StockMovementScalarFieldEnum | Prisma.StockMovementScalarFieldEnum[]
+}
+
+/**
+ * User.fieldVisits
+ */
+export type User$fieldVisitsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FieldVisit
+   */
+  select?: Prisma.FieldVisitSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FieldVisit
+   */
+  omit?: Prisma.FieldVisitOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FieldVisitInclude<ExtArgs> | null
+  where?: Prisma.FieldVisitWhereInput
+  orderBy?: Prisma.FieldVisitOrderByWithRelationInput | Prisma.FieldVisitOrderByWithRelationInput[]
+  cursor?: Prisma.FieldVisitWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FieldVisitScalarFieldEnum | Prisma.FieldVisitScalarFieldEnum[]
+}
+
+/**
+ * User.fieldReports
+ */
+export type User$fieldReportsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the FieldReport
+   */
+  select?: Prisma.FieldReportSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the FieldReport
+   */
+  omit?: Prisma.FieldReportOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.FieldReportInclude<ExtArgs> | null
+  where?: Prisma.FieldReportWhereInput
+  orderBy?: Prisma.FieldReportOrderByWithRelationInput | Prisma.FieldReportOrderByWithRelationInput[]
+  cursor?: Prisma.FieldReportWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.FieldReportScalarFieldEnum | Prisma.FieldReportScalarFieldEnum[]
+}
+
+/**
+ * User.supportTickets
+ */
+export type User$supportTicketsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SupportTicket
+   */
+  select?: Prisma.SupportTicketSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SupportTicket
+   */
+  omit?: Prisma.SupportTicketOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SupportTicketInclude<ExtArgs> | null
+  where?: Prisma.SupportTicketWhereInput
+  orderBy?: Prisma.SupportTicketOrderByWithRelationInput | Prisma.SupportTicketOrderByWithRelationInput[]
+  cursor?: Prisma.SupportTicketWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SupportTicketScalarFieldEnum | Prisma.SupportTicketScalarFieldEnum[]
 }
 
 /**
