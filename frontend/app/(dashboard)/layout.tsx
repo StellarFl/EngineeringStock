@@ -23,7 +23,6 @@ function DashboardAuthGuard() {
   return null;
 }
 
-
 export default function DashboardLayout({ children }: LayoutProps<"/">) {
   return (
     <StoreProvider>
@@ -41,7 +40,7 @@ export default function DashboardLayout({ children }: LayoutProps<"/">) {
         <script
           src="https://widget.swiftagents.org/dist/widget-ui.js"
           data-company-id="86fef8e9-d1aa-469f-86a9-38850c362724"
-          data-api-key={process.env.NEXT_SWIFT_API_KEY}
+          data-api-key={process.env.NEXT_PUBLIC_SWIFT_API_KEY}
           defer
         ></script>
       </div>
