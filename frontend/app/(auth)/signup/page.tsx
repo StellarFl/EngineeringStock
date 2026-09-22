@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useRegister } from "@/api-services/hooks/useAuth";
-import { AppIcon, icons } from "@/components/ui/app-icon";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -129,13 +128,6 @@ export default function SignupPage() {
         </button>
       </form>
 
-      <a
-        href={`${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/google`}
-        className="inline-flex gap-2 h-12 w-full items-center justify-center rounded-xl border border-stone-200 px-6 text-sm font-semibold text-stone-700 transition-colors hover:bg-stone-50"
-      >
-        <AppIcon name={icons.google} label="Google" />
-        Continue with Google
-      </a>
 
       <p className="text-sm text-stone-600">
         Already have an account?{" "}

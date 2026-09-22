@@ -63,10 +63,11 @@ export interface FieldGalleryPhoto {
   notes?: string | null;
   capturedAt?: string | null;
   site?: { name: string } | null;
+  addedBy?: { name: string } | null;
 }
 
 export const getFieldGallery = async () =>
-  (await api.get<ApiResponse<Array<{ photos: FieldGalleryPhoto[] }>>>("/engineering/field-visits")).data;
+  (await api.get<ApiResponse<Array<{ engineer?: { name: string } | null; photos: FieldGalleryPhoto[] }>>>("/engineering/field-visits")).data;
 
 export const uploadFieldGallery = async (input: {
   files: File[];

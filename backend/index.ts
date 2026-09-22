@@ -20,6 +20,7 @@ const port = Number(process.env.SERVER_PORT ?? process.env.PORT ?? 3000)
 const allowedOrigins = new Set([
     "http://localhost:3000",
     "http://localhost:3001",
+    "https://engineering-stock.vercel.app",
     process.env.CLIENT_URL ?? "",
 ].filter(Boolean))
 

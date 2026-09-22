@@ -1,13 +1,33 @@
 "use client";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 import { DesktopSidebar, MobileSidebar } from "@/components/dashboard/sidebar";
 import { Topbar } from "@/components/dashboard/topbar";
+import { loadAuthSession } from "@/lib/auth/session";
+import { useAppSelector } from "@/store/hooks";
 import { StoreProvider } from "@/store/store-provider";
 import { AppIcon, icons } from "@/components/ui/app-icon";
+
+function DashboardAuthGuard() {
+  const router = useRouter();
+  const token = useAppSelector((state) => state.auth.token);
+
+  useEffect(() => {
+    const hasToken = Boolean(token || loadAuthSession()?.token);
+    if (!hasToken) {
+      router.replace("/login");
+    }
+  }, [router, token]);
+
+  return null;
+}
 
 export default function DashboardLayout({ children }: LayoutProps<"/">) {
   return (
     <StoreProvider>
+      <DashboardAuthGuard />
       <div className="min-h-dvh bg-ink-50">
         <DesktopSidebar />
         <MobileSidebar />

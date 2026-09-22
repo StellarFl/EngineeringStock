@@ -16,5 +16,5 @@ export const sendInvitationEmail = async (data: Invite) => {
         <p>This link expires in 7 days. If you didn't request this, you can ignore this email.</p>
     `
 
-    await sendEmail(data.to, "Invitation to Inventeree", html)
+    await sendEmail(data.to, "Invitation to ForgeTrack", html)
 }
