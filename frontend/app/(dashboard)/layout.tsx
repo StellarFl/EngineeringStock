@@ -8,7 +8,6 @@ import { Topbar } from "@/components/dashboard/topbar";
 import { loadAuthSession } from "@/lib/auth/session";
 import { useAppSelector } from "@/store/hooks";
 import { StoreProvider } from "@/store/store-provider";
-import { AppIcon, icons } from "@/components/ui/app-icon";
 
 function DashboardAuthGuard() {
   const router = useRouter();
@@ -24,6 +23,7 @@ function DashboardAuthGuard() {
   return null;
 }
 
+
 export default function DashboardLayout({ children }: LayoutProps<"/">) {
   return (
     <StoreProvider>
@@ -38,15 +38,14 @@ export default function DashboardLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
         </div>
+        <script
+          src="https://widget.swiftagents.org/dist/widget-ui.js"
+          data-company-id="86fef8e9-d1aa-469f-86a9-38850c362724"
+          data-api-key={process.env.NEXT_SWIFT_API_KEY}
+          defer
+        ></script>
       </div>
-      <button
-        type="button"
-        aria-label="Open support chat"
-        title="Support chat"
-        className="fixed right-5 bottom-5 z-50 grid size-14 place-items-center rounded-full bg-brand-700 text-brand-50 shadow-[0_12px_28px_rgba(71,36,28,0.24)] transition-colors hover:bg-brand-800 focus-visible:outline-brand-500 sm:right-8 sm:bottom-8"
-      >
-        <AppIcon name={icons.chat} className="size-6" />
-      </button>
+    
     </StoreProvider>
   );
 }
