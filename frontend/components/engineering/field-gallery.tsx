@@ -317,7 +317,7 @@ export function FieldGallery() {
                   alt={`${image.category} at ${image.location}`}
                   className="size-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <span className="absolute right-3 top-3 rounded-md bg-black px-2.5 py-1 text-[11px] font-semibold text-brand-700 shadow-sm z-30">
+                <span className="absolute right-3 top-3 rounded-md bg-white px-2.5 py-1 text-[11px] font-semibold text-brand-700 shadow-sm z-30">
                   Added by {image.addedBy?.name || "Unknown account"}
                 </span>
                 <span className="absolute left-3 top-3 rounded-full bg-ink-950/80 px-2.5 py-1 text-[11px] font-semibold capitalize text-white">

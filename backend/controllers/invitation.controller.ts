@@ -44,14 +44,25 @@ export const sendInvitation = async (req: Request, res: Response) => {
         if (invitation.status !== "pending") {
             return res.status(400).json({ message: "Invitation does not stand" });
         }
-        await sendInvitationEmail(
-            {
-                to: email,
-                token: rawToken,
-                inviter: inviter.name,
+        try {
+            await sendInvitationEmail(
+                {
+                    to: email,
+                    token: rawToken,
+                    inviter: inviter.name,
 
-            }
-        );
+                }
+            );
+        } catch {
+            console.error("Invitation email delivery failed", { invitationId: invitation.id });
+            await prisma.invitation.update({
+                where: { id: invitation.id },
+                data: { status: "revoked" },
+            });
+            return res.status(502).json({
+                message: "The invitation email could not be delivered. Check SMTP configuration and try again.",
+            });
+        }
 
         return res.status(201).json({
             message: "Invitation sent successfully",
@@ -67,6 +78,8 @@ export const sendInvitation = async (req: Request, res: Response) => {
         switch (error.message) {
             case ("ALREADY_MEMBER"):
                 return res.status(400).json({ message: "User is already a member of this business" });
+            case ("INVITATION_ALREADY_PENDING"):
+                return res.status(409).json({ message: "An invitation is already pending for this email." });
             default:
                 console.log(error);
                 return res.status(500).json({ message: "Internal Server Error occured" });

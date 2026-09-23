@@ -24,17 +24,25 @@ export const sendInvitationService = async (invitationData: invitationRequest) =
         }
     }
 
-    return await prisma.invitation.create({
-        data: {
-            email: invitationData.email,
-            businessId: invitationData.businessId,
-            role: invitationData.role,
-            invitedById: invitationData.invitedById,
-            tokenHash: invitationData.tokenHash,
-            expiresAt: invitationData.expiresAt,
-            status: 'pending'
+    try {
+        return await prisma.invitation.create({
+            data: {
+                email: invitationData.email,
+                businessId: invitationData.businessId,
+                role: invitationData.role,
+                invitedById: invitationData.invitedById,
+                tokenHash: invitationData.tokenHash,
+                expiresAt: invitationData.expiresAt,
+                status: 'pending'
+            }
+        });
+    } catch (error) {
+        if ((error as { code?: string }).code === "P2002") {
+            throw new Error("INVITATION_ALREADY_PENDING");
         }
-    });
+
+        throw error;
+    }
 };
 
 const getValidInvitationByToken = async (token: string) => {
